@@ -22,6 +22,8 @@ beginning: left of the first
 When the operation start, location_of_cursor is at the end of the text.
 """
 
+# this code is not passed because operating time is exceeded to the standard.
+
 text_to_edit = (
     input()
 )  # A string would be modified during the command entered in the iteration
