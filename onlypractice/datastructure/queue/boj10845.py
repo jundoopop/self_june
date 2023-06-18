@@ -31,19 +31,19 @@ for i in range(iter_number):
     command = input().split()
 
     # front: first element of the list
-    if command[0][0] == "f":
+    if command[0] == "front":
         print(queue_list[0]) if len(queue_list) != 0 else print(-1)
 
     # back: last element of the list
-    if command[0][0] == "b":
+    if command[0] == "back":
         print(queue_list[-1]) if len(queue_list) != 0 else print(-1)
 
     # size: length of the list
-    if command[0][0] == "s":
+    if command[0] == "size":
         print(len(queue_list))
 
     # if the length of the list is 0 or not
-    if command[0][0] == "e":
+    if command[0] == "empty":
         print(1) if len(queue_list) == 0 else print(0)
 
     # pop method -> queue is fifo.
