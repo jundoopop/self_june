@@ -3,36 +3,34 @@
   <head>
     <link rel="stylesheet" href="../stStyle.css" />
     <nav class="menu">
-        <menu type="toolbar">
-          <ul class="topNav">
-            <li>
-              <a class="topNavElement" href="#notice">공지사항</a>
-            </li>
-            <li>
-              <!-- Basket page: set 'active' -->
-              <a
-                class="topNavElement topNavActive"
-                href="basketSearchByClass.html"
-                >장바구니</a
-              >
-            </li>
-            <li>
-              <a class="topNavElement" href="../register/registerByBasket.html"
-                >수강신청</a
-              >
-            </li>
-            <li>
-              <a class="topNavElement" href="#enrollCheck">수강신청확인서</a>
-            </li>
-            <li><a class="topNavElement" href="#timetable">시간표조회</a></li>
-          </ul>
-        </menu>
-      </nav>
+      <menu type="toolbar">
+        <ul class="topNav">
+          <li>
+            <a class="topNavElement" href="#notice">공지사항</a>
+          </li>
+          <li>
+            <!-- Basket page: set 'active' -->
+            <a class="topNavElement" href="../basket/basketSearchByClass.html"
+              >장바구니</a
+            >
+          </li>
+          <li>
+            <a class="topNavElement topNavActive" href="registerByBasket.html"
+              >수강신청</a
+            >
+          </li>
+          <li>
+            <a class="topNavElement" href="#enrollCheck">수강신청확인서</a>
+          </li>
+          <li><a class="topNavElement" href="#timetable">시간표조회</a></li>
+        </ul>
+      </menu>
+    </nav>
   </head>
   <body>
     <ul>
       <li>
-        학생정보
+        <b>학생정보</b>
         <table class="dataTable">
           <tr>
             <th>년도</th>
@@ -101,58 +99,46 @@
         <menu type="toolbar">
           <ul class="bottomNav">
             <li>
-              <a
-                class="bottomNavElement"
-                href="../basket/basketSearchByClass.html"
+              <a class="bottomNavElement bottomNavActive" href = "registerByBasket.html"
+                >장바구니조회</a
+              >
+            </li>
+
+            <li>
+              <a class="bottomNavElement" href="registerByClass.html"
                 >소속분반과목조회</a
               >
             </li>
 
             <li>
-              <a
-                class="bottomNavElement"
-                href="../basket/basketSearchByDay.html"
+              <a class="bottomNavElement" href="registerByDay.html"
                 >요일별조회</a
               >
             </li>
 
             <li>
-              <a class="bottomNavElement bottomNavActive" href="#"
+              <a class="bottomNavElement" href="registerByCurri.html"
                 >특정과정과목조회</a
               >
             </li>
 
-            <li><a class="bottomNavElement" href="#">과목직접입력</a></li>
+            <li>
+              <a class="bottomNavElement" href="registerByHand.html"
+                >과목직접입력</a
+              >
+            </li>
           </ul>
         </menu>
       </nav>
     </div>
     <ul>
-      <table>
-        <td><b>교직</b></td>
-        <td>
-          <select name="curriculum">
-            <option value="tutoring">교직</option>
-          </select>
-        </td>
-        <td>
-          <b>학과</b>
-        </td>
-        <td>
-          <select>
-            <option value="industry">산업공학과</option>
-            <option value="iise">산업정보시스템</option>
-            <option value="computer">컴퓨터공학과</option>
-          </select>
-        </td>
-        <td>
-            <button>🔍조회</button>
-        </td>
-      </table>
+      <div>
+        <button><b>💾저장</b></button>
+      </div>
 
       <table class="dataTable">
         <tr>
-          <th>선택</th>
+          <th><input type="checkbox" /></th>
           <th>과목코드</th>
           <th>과목명</th>
           <th>강좌번호</th>
@@ -169,11 +155,11 @@
           <th>유사대체</th>
         </tr>
         <tr>
-          <td><button>저장</button></td>
+          <td><input type="checkbox" /></td>
           <td>113031</td>
-          <td>딥러닝</td>
+          <td>술래잡기</td>
           <td>21001</td>
-          <td>황상흠</td>
+          <td>이재용</td>
           <td>전공선택</td>
           <td>3</td>
           <td>월(1-2),수(1-2)</td>
