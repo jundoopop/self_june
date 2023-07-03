@@ -109,19 +109,23 @@
             </li>
 
             <li>
-              <a class="bottomNavElement bottomNavActive" href="#"
+              <a class="bottomNavElement" href="basketSearchByDay.html"
                 >요일별조회</a
               >
             </li>
 
             <li>
-              <a class="bottomNavElement" href="basketSearchByCurri.html"
+              <a
+                class="bottomNavElement"
+                href="../basket/basketSearchByCurri.html"
                 >특정과정과목조회</a
               >
             </li>
 
             <li>
-              <a class="bottomNavElement" href="basketSearchByHand.html"
+              <a
+                class="bottomNavElement bottomNavActive"
+                href="basketSearchByHand.html"
                 >과목직접입력</a
               >
             </li>
@@ -130,44 +134,15 @@
       </nav>
     </div>
     <ul>
-      <table>
-        <td>학과</td>
-        <td>
-          <select name="학과">
-            <option value="computer">컴퓨터공학과</option>
-            <option value="iise">산업정보시스템전공(학부)</option>
-          </select>
-        </td>
-        <td>주야</td>
-        <td>
-          <select name="주간">
-            <option value="day">주간</option>
-            <option value="night">야간</option>
-          </select>
-        </td>
-        <td>요일</td>
-        <td>
-          <select name="days">
-            <option value="all">-전체-</option>
-            <option value="monday">월</option>
-            <option value="tuesday">화</option>
-            <option value="wednesday">수</option>
-            <option value="thursday">목</option>
-            <option value="friday">금</option>
-            <option value="saturday">토</option>
-            <option value="sunday">일</option>
-          </select>
-        </td>
-        <td>
-          <b>과목명</b>
-        </td>
-        <td>
-          <input type="search" />
-        </td>
-        <td>
-          <button>🔍조회</button>
-        </td>
-      </table>
+      <div>
+        <table>
+          <th><b>교과목코드</b></th>
+          <td><input type="search" /></td>
+          <th><b>강좌번호</b></th>
+          <td><input type="search" /></td>
+          <td><button>💾 저장</button></td>
+        </table>
+      </div>
 
       <table class="dataTable">
         <tr>

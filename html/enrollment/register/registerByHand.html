@@ -53,7 +53,7 @@
       </li>
 
       <li>
-        장바구니
+        <b>수강신청</b>
         <div><button>저장</button></div>
         <div>
           <table class="dataTable">
@@ -99,9 +99,7 @@
         <menu type="toolbar">
           <ul class="bottomNav">
             <li>
-              <a
-                class="bottomNavElement"
-                href="registerByBasket.html"
+              <a class="bottomNavElement" href="registerByBasket.html"
                 >장바구니조회</a
               >
             </li>
@@ -125,7 +123,9 @@
             </li>
 
             <li>
-              <a class="bottomNavElement bottomNavActive" href="registerByHand.html"
+              <a
+                class="bottomNavElement bottomNavActive"
+                href="registerByHand.html"
                 >과목직접입력</a
               >
             </li>
@@ -135,7 +135,13 @@
     </div>
     <ul>
       <div>
-        <button><b>💾저장</b></button>
+        <table>
+          <th><b>교과목코드</b></th>
+          <td><input type="search" /></td>
+          <th><b>강좌번호</b></th>
+          <td><input type="search" /></td>
+          <td><button>💾 저장</button></td>
+        </table>
       </div>
 
       <table class="dataTable">

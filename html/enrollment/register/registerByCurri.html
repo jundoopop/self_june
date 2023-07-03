@@ -53,7 +53,7 @@
       </li>
 
       <li>
-        장바구니
+        <b>수강신청</b>
         <div><button>저장</button></div>
         <div>
           <table class="dataTable">
@@ -99,9 +99,7 @@
         <menu type="toolbar">
           <ul class="bottomNav">
             <li>
-              <a
-                class="bottomNavElement"
-                href="registerByBasket.html"
+              <a class="bottomNavElement" href="registerByBasket.html"
                 >장바구니조회</a
               >
             </li>
@@ -119,7 +117,9 @@
             </li>
 
             <li>
-              <a class="bottomNavElement bottomNavActive" href="registerByCurri.html"
+              <a
+                class="bottomNavElement bottomNavActive"
+                href="registerByCurri.html"
                 >특정과정과목조회</a
               >
             </li>
@@ -134,9 +134,27 @@
       </nav>
     </div>
     <ul>
-      <div>
-        <button><b>💾저장</b></button>
-      </div>
+      <table>
+        <td><b>구분</b></td>
+        <td>
+          <select name="curriculum">
+            <option value="tutoring">교직</option>
+          </select>
+        </td>
+        <td>
+          <b>학과</b>
+        </td>
+        <td>
+          <select>
+            <option value="industry">산업공학과</option>
+            <option value="iise">산업정보시스템</option>
+            <option value="computer">컴퓨터공학과</option>
+          </select>
+        </td>
+        <td>
+          <button>🔍조회</button>
+        </td>
+      </table>
 
       <table class="dataTable">
         <tr>
