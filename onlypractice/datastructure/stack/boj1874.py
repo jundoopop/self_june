@@ -13,42 +13,26 @@ If the number of pushed numbers are more than one,
 but requires ascending order -> It cannot be implemented.
 """
 
-
-result = []  # Result is for printing '+' and '-'
-temp = []  # Temp is stack.
-list_of_popped_numbers = (
+list_of_pushed_number = (
     []
-)  # This list is needed for the condition to push a number to the stack.
+)  # list_of_pushed_number is a list to contain the temporary numbers
+stack = []  # Stack is for printing result
+targeted_number = 1  # targeted_number is for a comparison with the number input
+for i in range(int(input())):  # int(input()): n (iteration)
+    number = int(input())  # This number consists a stack
+    while targeted_number <= number:  # If list_of_pushed_number is needed to be added
+        list_of_pushed_number.append(targeted_number)
+        stack.append("+")  # Record the history of push
+        targeted_number += 1  # Step to next targeted number
 
-last_num, status = 0, 1
-for i in range(int(input())):  # Iterate as the number which is entered
-    target = int(input())
+    # This print is for checking if list works correctly
+    # print(f"Temp Stack: {list_of_pushed_number}")
 
-    if target >= last_num:  # Compare with target 'target' and 'last_num'.
-        for j in range(
-            last_num + 1, target + 1
-        ):  # When 'target' is same or larger than 'last_num'
-            if (
-                j not in list_of_popped_numbers
-            ):  # the number j is not contained in the list_of_popped_numbers.
-                temp.append(
-                    j
-                )  # Append 'j' to the list 'temp', and record the append to the result."
-                result.append("+")
+    if number == list_of_pushed_number.pop():  # If the sequence of stack is valid
+        stack.append("-")  # Record the history of pop
+    else:  # If it is invalid
+        print("NO")  # Print 'NO' and break the loop
+        break
 
-    if temp[-1] == target:
-        print(f"temp[-1] {temp[-1]} equals to the target {target}.")
-        list_of_popped_numbers.append(temp.pop())
-        result.append("-")
-
-    elif temp[-1] > target:  # The array which is targeted is not able to be created.
-        status = 0
-        print("NO")
-        break  # End the loop
-
-    last_num = target  # Declare the next last_num for comparison with the next target
-
-
-if status == 1:  # Status 1 means making a targeted list with push and pop is able.
-    for operator in result:
-        print(operator)
+else:  # When loop successfully iterated to the end
+    print("\n".join(stack))  # Print by using join method.
