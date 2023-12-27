@@ -10,7 +10,6 @@ int main(void) {
                                            0, 0, 0, 0, 0, 0, 0, 0, 0,
                                            0, 0, 0, 0, 0, 0, 0, 0};
 
-  int cnt;              // cnt is a number of sentences, it could not exceed 50
   std::string sentence; // Contains the sentence to be inputted
 
   for (int i = 0; i < 50; i++) // For each sentence
