@@ -1,24 +1,25 @@
 # Get the length of the list
-lengthOfList = int(input())
+length_of_list = int(input())
 
 # Get the list of numbers
-listOfNumbers = [int(x) for x in input().split()]
+list_of_numbers = [int(x) for x in input().split()]
 
+# Initialize lists to track ascending and descending sequence lengths
+ascending_lengths = [1] * length_of_list
+descending_lengths = [1] * length_of_list
 
-ascendingList = [1 for _ in range(lengthOfList)]
-descendingList = [1 for _ in range(lengthOfList)]
-
-for idx in range(lengthOfList - 1):
-    # In the scope of ascending sequence
-    if listOfNumbers[idx + 1] > listOfNumbers[idx]:
-        ascendingList[idx + 1] += ascendingList[idx]
-    # In the scope of descending sequence
-    elif listOfNumbers[idx + 1] < listOfNumbers[idx]:
-        descendingList[idx + 1] += descendingList[idx]
-
+# Iterate through the list to fill the ascending and descending lists
+for i in range(1, length_of_list):
+    # Count the case of ascending
+    if list_of_numbers[i] > list_of_numbers[i - 1]:
+        ascending_lengths[i] = ascending_lengths[i - 1] + 1
+    # Count the case of descending
+    elif list_of_numbers[i] < list_of_numbers[i - 1]:
+        descending_lengths[i] = descending_lengths[i - 1] + 1
+    # If numbers are equal, maintain the sequence lengths
     else:
-        ascendingList[idx + 1] += ascendingList[idx]
-        descendingList[idx + 1] += descendingList[idx]
+        ascending_lengths[i] = ascending_lengths[i - 1] + 1
+        descending_lengths[i] = descending_lengths[i - 1] + 1
 
-# Print the maximum number of numbers.
-print(max(max(ascendingList), max(descendingList)))
+# Print the maximum length found in either ascending or descending sequences
+print(max(max(ascending_lengths), max(descending_lengths)))
