@@ -1,46 +1,45 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <algorithm> // max
+#include <iostream> // cin, cout
+#include <vector> // vector
 
-int main()
-{
-    // Declare the variety for the number of cases
-    int numOfStairs;
-    std::cin >> numOfStairs;
+using namespace std;
 
-    std::vector<int> stairs(numOfStairs);
-    for (int i = 0; i < numOfStairs; ++i)
-    {
-        std::cin >> stairs[i];
-    }
+int main() {
+  // Declare the variety for the number of cases
+  int iteration;
+  cin >> iteration;
 
-    // When the number of stairs are same or less than 2
-    if (numOfStairs == 1)
-    {
-        std::cout << stairs[0] << std::endl;
-        return 0;
-    }
-    if (numOfStairs == 2)
-    {
-        std::cout << stairs[0] + stairs[1] << std::endl;
-        return 0;
-    }
+  vector<int> stairs(iteration);
 
-    // Initialise the dp array
-    std::vector<int> dp(numOfStairs);
+  // Set the values of stairs
+  for (auto &value : stairs) {
+    cin >> value;
+  }
 
-    // Allocate the dp results for counting
-    dp[0] = stairs[0];
-    dp[1] = stairs[0] + stairs[1];
-    dp[2] = std::max(stairs[0] + stairs[2], stairs[1] + stairs[2]);
-
-    // Fill the dp array
-    for (int i = 3; i < numOfStairs; ++i)
-    {
-        dp[i] = std::max(dp[i - 2], dp[i - 3] + stairs[i - 1]) + stairs[i];
-    }
-
-    // Get the optimised result
-    std::cout << dp[numOfStairs - 1] << std::endl;
+  // When the number of stairs are same or less than 2
+  if (iteration == 1) {
+    cout << stairs[0] << '\n';
     return 0;
+  }
+  if (iteration == 2) {
+    cout << stairs[0] + stairs[1] << '\n';
+    return 0;
+  }
+
+  // Initialise the dp array
+  vector<int> dp(iteration);
+
+  // Allocate the dp results for counting
+  dp[0] = stairs[0];
+  dp[1] = stairs[0] + stairs[1]; // one step
+  dp[2] = max(stairs[0] + stairs[2], stairs[1] + stairs[2]); // two steps
+
+  // Fill the dp array
+  for (int i = 3; i < iteration; ++i) {
+    dp[i] = max(dp[i - 2], dp[i - 3] + stairs[i - 1]) + stairs[i];
+  }
+
+  // Print the optimised result
+  cout << dp[iteration - 1] << '\n';
+  return 0;
 }
